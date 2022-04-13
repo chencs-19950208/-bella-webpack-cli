@@ -1,9 +1,8 @@
-const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 const variable = require('./utils/variable');
 
-const { DIST_PATH, IS_DEV, IS_PRO } = variable;
+const { DIST_PATH, IS_PRO } = variable;
 
 // 引入 react-refresh 做热更新，详细可以百度 包的用法
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
@@ -31,11 +30,10 @@ const config = {
     disableHostCheck: true,
     stats: 'errors-only',
     proxy: {},
-  }
+  },
 };
 
 const mergedConfig = webpackMerge.merge(baseConfig, config);
 mergedConfig.plugins = mergedConfig.plugins.filter(Boolean);
 
 module.exports = mergedConfig;
-

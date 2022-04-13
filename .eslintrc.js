@@ -126,13 +126,12 @@ module.exports = {
     'react/destructuring-assignment': [0, 'always'],
     // 属性验证
     'react/prop-types': 'off',
-
     // 多余的依赖
     'import/no-extraneous-dependencies': 'off',
     // jsx关闭位置
     'react/jsx-closing-tag-location': 1,
-    // 多行
-    'react/jsx-wrap-multilines': 'off',
+    // // 多行
+    // 'react/jsx-wrap-multilines': ['error', { 'declaration': true, 'assignment': true }],
     // 一行一个表达式
     'react/jsx-one-expression-per-line': 'off',
     // will update不能使用setState

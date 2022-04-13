@@ -31,16 +31,16 @@ const config = {
             loader: 'thread-loader',
             options: {
               workers: require('os').cpus().length * 2,
-              parallel: true
-            }
+              parallel: true,
+            },
           },
           {
             loader: require.resolve('babel-loader'),
             options: {
               cacheDirectory: true,
-              plugins: [IS_DEV && ['react-refresh/babel', { skipEnvCheck: true }]].filter(Boolean)
-            }
-          }
+              plugins: [IS_DEV && ['react-refresh/babel', { skipEnvCheck: true }]].filter(Boolean),
+            },
+          },
         ],
         exclude: [/node_modules/, /public/, /(.|_)min\.js$/],
       },
@@ -53,19 +53,19 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              modules: false,
+              modules: true,
               sourceMap: !IS_PRO,
-            }
+            },
           },
           'postcss-loader',
           'less-loader',
           {
             loader: 'style-resources-loader',
             options: {
-              patterns: path.resolve(SRC_PATH, 'assets', 'css', 'core.less')
-            }
-          }
-        ]
+              patterns: path.resolve(SRC_PATH, 'assets', 'css', 'core.less'),
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
@@ -80,8 +80,8 @@ const config = {
         generator: {
           filename: 'assets/fonts/[hash][ext][query]',
         },
-      }
-    ]
+      },
+    ],
   },
   resolve: resolveConfig,
   plugins: plugins.getPlugins(),

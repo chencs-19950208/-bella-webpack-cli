@@ -1,0 +1,37 @@
+.mainApp {
+  :global {
+    .ant-layout {
+      min-height: 0;
+    }
+  }
+}
+
+.site-layout-background{
+  height: calc(100vh - 64);
+  background-color: #fff !important;
+  position: relative;
+  .img-part{
+    position:absolute;
+    padding : 6px;
+    bottom: 0;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.9;
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.right-content{
+  max-height: calc(100vh - 64);
+  overflow-y: auto;
+  margin: 0;
+  min-height: 280px;
+  background: #fff;
+  display: flex;
+  &>div{
+    width:100%;
+  }
+}

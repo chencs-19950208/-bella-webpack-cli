@@ -1,0 +1,66 @@
+{
+  "children": [
+    {
+      "detail": {
+        "path": "/store/operation",
+        "icon": "zhudaohang-qiyeshuju",
+        "name": "运营管理",
+        "hashType": true,
+        "target": "_self"
+      },
+      "children": [
+        {
+          "detail": {
+            "activePath": ["/operation/offlineTour"],
+            "path": "/#/operation/offlineTour",
+            "entryType": "url",
+            "hashType": true,
+            "icon": "icon-jichubaobiao",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.css"
+            ],
+            "name": "线下巡店",
+            "target": "_self"
+          },
+          "key": "store-offline-tour"
+        },
+        {
+          "detail": {
+            "activePath": ["/operation/onlineTour"],
+            "path": "/#/operation/onlineTour",
+            "entryType": "url",
+            "hashType": true,
+            "icon": "icon-zuzhijiagou",
+            "name": "线上巡店",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.css"
+            ],
+            "target": "_self"
+          },
+          "key": "store-online-tour"
+        },
+        {
+          "detail": {
+            "activePath": ["/operation/display"],
+            "path": "/#/operation/display",
+            "entryType": "url",
+            "hashType": true,
+            "icon": "icon-mendianguanli",
+            "name": "标准陈列",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27481292/umi.css"
+            ],
+            "target": "_self"
+          },
+          "key": "store-display"
+        }
+      ],
+      "key": "operation"
+    }
+  ],
+  "detail": {},
+  "key": "root"
+}
