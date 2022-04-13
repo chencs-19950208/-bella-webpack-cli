@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.less';
+import Container from './pages/container';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Container />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
