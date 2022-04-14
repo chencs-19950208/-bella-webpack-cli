@@ -1,10 +1,15 @@
 .header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   height: 64px;
   color: rgba(0, 0, 0, 0.85);
   line-height: 64px;
   background: #fff;
   display: flex;
   align-items: center;
+  padding: 0 20px;
   width: 100%;
 
   .top-nav{
@@ -22,5 +27,33 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .upcoming{
+    margin-right: 25px;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+
+  .customer {
+    margin-right: 25px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+
+    span {
+      margin-left: 3px;
+    }
+  }
+
+  .avatar{
+    display: flex;
+    align-items: center;
+    .name{
+      margin-left: 8px;
+    }
   }
 }

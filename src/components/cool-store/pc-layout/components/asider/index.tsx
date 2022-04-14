@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Menu } from 'antd';
 
 import { menuRender } from './const';
-import styles from './index.module.less';
+import styles from './index.less';
 
 const Asider = ({ menuData, onHandleMenu, defaultAsideKey }) => {
   // console.log(menuData, 'menuData----');
@@ -48,14 +48,15 @@ const Asider = ({ menuData, onHandleMenu, defaultAsideKey }) => {
   return (
     <Menu
       onClick={handleClick}
-      inlineIndent={12}
-      style={{ width: 180, padding: '0 6px' }}
+      inlineIndent={36}
+      style={{ width: 180, height: '100vh', padding: '64px 6px 0 6px' }}
       // triggerSubMenuAction="hover"
       selectedKeys={selectedKeys}
       openKeys={openKeys}
       onOpenChange={handleOpenChange}
       onSelect={handleSelect}
       mode="inline"
+      theme="light"
     >
       {menuItems}
     </Menu>

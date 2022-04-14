@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Badge, Menu, Avatar } from 'antd';
 
 import styles from './index.less';
@@ -8,6 +8,10 @@ import React from 'react';
 const Header = ({ onTabClick, headerTabs, defaultActiveKey }) => {
   const [todoCount, setToDoCount] = useState(0);
 
+  useEffect(() => {
+    setToDoCount(1);
+  }, []);
+
   console.log(styles, 'headerTabs----');
 
   return (
@@ -15,8 +19,8 @@ const Header = ({ onTabClick, headerTabs, defaultActiveKey }) => {
       <div className={styles.header}>
         <div className={styles.logo}>
           <img
-            style={{ width: 90, height: 30, marginLeft: 2 }}
-            src="https://joeschmoe.io/api/v1/random"
+            style={{ width: 50, height: 30, marginLeft: 20 }}
+            src="https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg"
             alt="logo"
           />
         </div>
@@ -28,7 +32,6 @@ const Header = ({ onTabClick, headerTabs, defaultActiveKey }) => {
         >
           {headerTabs.map(item => {
             console.log(item, 'header-item');
-            // return <Menu.Item className={item.key} key={item.id}><AppLink to={item.path} hashType={item.hashType}>{item.name}</AppLink></Menu.Item>;
             return <Menu.Item key={item.key}>{item.name}</Menu.Item>;
           })}
         </Menu>

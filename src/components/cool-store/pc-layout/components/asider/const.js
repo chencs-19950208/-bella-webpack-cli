@@ -1,5 +1,5 @@
 import React from 'react';
-// import { AppLink } from '@ice/stark';
+import { AppLink } from '@ice/stark-app';
 import { Menu } from 'antd';
 
 // import styles from './index.less';
@@ -52,17 +52,16 @@ export function menuRender(menuData) {
           } else {
             // console.log(detail, 'detail-app-link-----')
             return (
-              <Menu.Item
+              <Item
                 className={detail?.icon}
                 id={detail.path}
                 key={detail.path}
                 // icon={<IconFont style={{ fontSize: 16 }} type={detail.icon} />}
               >
-                {/* <AppLink to={detail.path} hashType={detail.hashType}>
+                <AppLink to={detail.path} hashType={detail.hashType}>
                   {detail?.name}
-                </AppLink> */}
-                {detail?.name}
-              </Menu.Item>
+                </AppLink>
+              </Item>
             );
           }
         }

@@ -37,17 +37,28 @@ const config = {
           {
             loader: require.resolve('babel-loader'),
             options: {
-              cacheDirectory: true,
-              plugins: [IS_DEV && ['react-refresh/babel', { skipEnvCheck: true }]].filter(Boolean),
+              cacheDirectory: false,
+              plugins: [
+                IS_DEV && ['react-refresh/babel', { skipEnvCheck: true }],
+                //  给antd做按需加载
+                [
+                  'import',
+                  {
+                    libraryName: 'antd',
+                    libraryDirectory: 'es',
+                    style: 'css', // `style: true` 会加载 less 文件
+                  },
+                ],
+              ].filter(Boolean),
             },
           },
         ],
         exclude: [/node_modules/, /public/, /(.|_)min\.js$/],
       },
       {
-        test: /\.css$|\.less$/i,
+        test: /\.(css|less)$/,
         include: [SRC_PATH],
-        exclude: /node_modules/,
+        exclude: /node_modules|antd/,
         use: [
           IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
@@ -66,6 +77,12 @@ const config = {
             },
           },
         ],
+      },
+      {
+        //  专门处理antd的less样式 需要编译
+        test: /\.(css|less)$/,
+        include: /node_modules|antd\.css/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif|jpeg|webp|svg)$/,

@@ -44,7 +44,6 @@ module.exports = function (api) {
         regenerator: true,
       },
     ],
-    [['import', { libraryName: 'antd', style: 'css' }]],
   ];
 
   return {

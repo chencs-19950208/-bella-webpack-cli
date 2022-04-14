@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout } from 'antd';
-import { appHistory } from '@ice/stark';
+import { appHistory } from '@ice/stark-app';
 
 import { LayoutProps } from '@/libs/main-app/index.d';
 import { getHeaderMenuData, getLeftMenuList } from '@/utils/commonUtils/menu';
@@ -8,12 +8,16 @@ import { getHeaderMenuData, getLeftMenuList } from '@/utils/commonUtils/menu';
 import Header from './components/header';
 import Asider from './components/asider';
 
-import './index.module.less';
+import './index.less';
 
 const { Content, Sider } = Layout;
 
 function CoolStorePCLayout(props: LayoutProps) {
-  const { menuData } = props;
+  const { menuData, microApps: MircoApps } = props;
+
+  console.log(MircoApps, 'microApps-----00000');
+
+  console.log(props, '=-=-=-=');
   // 获取顶部菜单项
   let headerMenuData = getHeaderMenuData(menuData);
   const [menuRoutes, setMenuRoutes] = useState([]);
@@ -24,23 +28,28 @@ function CoolStorePCLayout(props: LayoutProps) {
   };
 
   const handleMenuClick = (key: string) => {
-    appHistory.push(key);
+    // appHistory.push(key);
   };
 
-  console.log(menuData, 'menuData--');
+  useEffect(() => {
+    const newMenuRoutes = getLeftMenuList('operation', menuData);
+    setMenuRoutes(newMenuRoutes);
+  }, [menuData]);
+
   return (
     <div className="mainApp">
       <Layout>
-        <Header headerTabs={headerMenuData} onTabClick={onTabClick} defaultActiveKey={''} />
-        {/* <Header headerTabs={headerMenuData} onTabClick={onTabClick} defaultActiveKey={defaultTopMenuKeys} /> */}
+        <Header
+          headerTabs={headerMenuData}
+          onTabClick={onTabClick}
+          defaultActiveKey={'operation'}
+        />
         <Layout>
           <Sider width={180} className="site-layout-background">
             <Asider menuData={menuRoutes} onHandleMenu={handleMenuClick} defaultAsideKey={{}} />
           </Sider>
           <Layout className="right-content" style={{ padding: 10 }}>
-            <Content className="right-content">
-              <div id="store-main-app">1111</div>
-            </Content>
+            <Content className="right-content">{MircoApps}</Content>
           </Layout>
         </Layout>
       </Layout>
