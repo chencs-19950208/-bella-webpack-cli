@@ -1,0 +1,78 @@
+{
+  "children": [
+    {
+      "detail": {
+        "path": "/store/operation",
+        "icon": "zhudaohang-qiyeshuju",
+        "hashType": true,
+        "name": "运营管理",
+        "target": "_self"
+      },
+      "children": [
+        {
+          "detail": {
+            "activePath": ["/operation/offlineTour"],
+            "path": "/operation/offlineTour",
+            "entryType": "url",
+            "icon": "icon-jichubaobiao",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.css"
+            ],
+            "name": "线下巡店",
+            "target": "_self"
+          },
+          "key": "store-offline-tour"
+        },
+        {
+          "detail": {
+            "activePath": ["/operation/onlineTour"],
+            "path": "/operation/onlineTour",
+            "entryType": "url",
+            "icon": "icon-zuzhijiagou",
+            "name": "线上巡店",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.css"
+            ],
+            "target": "_self"
+          },
+          "key": "store-online-tour"
+        },
+        {
+          "detail": {
+            "activePath": ["/operation/display"],
+            "path": "/operation/display",
+            "entryType": "url",
+            "icon": "icon-mendianguanli",
+            "name": "标准陈列",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.css"
+            ],
+            "target": "_self"
+          },
+          "key": "store-display"
+        },
+        {
+          "detail": {
+            "activePath": ["/work/bench"],
+            "path": "/work/bench",
+            "entryType": "url",
+            "icon": "icon-mendianguanli",
+            "name": "工作台",
+            "urls": [
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.js",
+              "https://sdn.coolcollege.cn/dingtalk-store/test/2.0.0.0.27498995/umi.css"
+            ],
+            "target": "_self"
+          },
+          "key": "store-work"
+        }
+      ],
+      "key": "operation"
+    }
+  ],
+  "detail": {},
+  "key": "root"
+}
